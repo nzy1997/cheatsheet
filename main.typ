@@ -66,7 +66,12 @@
 
     #colbreak()
 
-    #pop.column-box(heading: "Third Column")[]
+    #pop.column-box(heading: "Quantum channels")[
+        Kraus representation:
+        $
+            phi(rho) = sum_i E_i rho E_i^dagger
+        $
+    ]
 ])
 
 #columns(3, [
