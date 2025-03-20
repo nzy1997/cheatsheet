@@ -1,5 +1,6 @@
 #import "@preview/peace-of-posters:0.5.2" as pop
-
+#import "@preview/cetz:0.3.4": canvas, draw
+#import "qec_plot.typ": *
 
 // #set page("a0", margin: 1cm, flipped: true)
 #set page(width: 2700pt,height:  4800pt,margin: 1cm, flipped: true)
@@ -13,25 +14,50 @@
 #pop.update-poster-layout(spacing: box-spacing)
 
 #pop.title-box(
-    "Zhongyi's Cheatsheet",
+    "Zhongyi's Cheatsheet, 2025/03",
 )
 
-#columns(3, [
-    #pop.column-box(heading: "General Relativity")[
-        Einstein's brilliant theory of general relativity
-        starts with the field equations).
-        $ G_(mu nu) + Lambda g_(mu nu) = kappa T_(mu nu) $
-        However, they have nothing to do with doves.
-    ]
+#columns(6, [
+    #pop.column-box(heading: "Codes")[
+#figure(canvas({
+  import draw: *
+  steane_code((0, 0),size: 8)
+  }))
+  #figure(canvas({
+  import draw: *
+  surface_code((0, 0), 3, 3, size :6,number_tag: true)
+  surface_code_label((20,7),size: 2)
+   for i in range(3){
+    circle((12, i*6), radius: 0.4, fill: red, stroke: none, name: "control" + str(i))
+   }
+   circle((17, 0), radius: 0.4, fill: red, stroke: none, name: "control")
+    content((rel: (3.3, 0), to: "control"), [Logical $Z$])
+}))]
 
     #colbreak()
 
-        #pop.column-box(heading: "Peace be with you")[
-        #figure(caption: [
-            'Doves [...] are used in many settings as symbols of peace, freedom or love.
-            Doves appear in the symbolism of Judaism, Christianity, Islam and paganism, and of both
-            military and pacifist groups.'
-        ])[]
+        #pop.column-box(heading: "Pauli")[
+        $
+            X = mat(0, 1; 1, 0), quad
+            Y = mat(0, -i; i, 0), quad
+            Z = mat(1, 0; 0, -1)
+        $
+        $
+            &X Y = i Z, &quad
+            &Y Z = i X, &quad
+            &Z X = i Y &\ 
+            &Y X = -i Z, &quad
+            &Z Y = -i X, &quad
+            &X Z = -i Y &
+        $
+        $
+            &[X, Y] = 2i Z, & quad
+            &[Y, Z] = 2i X, & quad
+            &[Z, X] = 2i Y & \ 
+            &[Y, X] = -2i Z, & quad
+            &[Z, Y] = -2i X, & quad
+            &[X, Z] = -2i Y &
+        $
     ]
 
     #pop.column-box(heading: "Another one")[
