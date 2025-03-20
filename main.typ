@@ -3,7 +3,8 @@
 #import "qec_plot.typ": *
 
 // #set page("a0", margin: 1cm, flipped: true)
-#set page(width: 2700pt,height:  4800pt,margin: 1cm, flipped: true)
+// #set page(width: 2700pt,height:  4800pt,margin: 1cm, flipped: true)
+#set page(width: 1800pt,height:  3200pt,margin: 1cm, flipped: true)
 
 #pop.set-poster-layout(pop.layout-a0)
 #pop.set-theme(pop.uni-fr)
@@ -17,7 +18,7 @@
     "Zhongyi's Cheatsheet, 2025/03",
 )
 
-#columns(6, [
+#columns(3, [
     #pop.column-box(heading: "Codes")[
 #figure(canvas({
   import draw: *
@@ -60,36 +61,49 @@
         $
     ]
 
-    #pop.column-box(heading: "Another one")[
-        We are peaceful doves.
-    ]
+    // #pop.column-box(heading: "Another one")[
+    //     We are peaceful doves.
+    // ]
 
     #colbreak()
 
     #pop.column-box(heading: "Quantum channels")[
+        A quantum channel: $phi in T(X,Y)$
+
         Kraus representation:
         $
-            phi(rho) = sum_i E_i rho E_i^dagger
+            phi(rho) = sum_i E_i rho E_i^dagger "(CP)", quad sum_i E_i^dagger E_i = I "(TP)"
         $
+
+        Choi isomorphism: $J: T(X,Y) arrow L(Y times.circle X)$
+        $
+           J(phi) = sum_(i,j) phi(|i angle.r angle.l j|) times.circle |i angle.r angle.l j|
+        $
+
+        Definition representation: $phi(rho) = "Tr"_E(U rho U^dagger) $
+
+        Vectorization: $K(phi)"vec"(rho) = "vec"(phi(rho))$
+
+
     ]
 ])
 
-#columns(3, [
-    #pop.column-box(heading: "Col1")[]
+// #columns(3, [
+//     #pop.column-box(heading: "Col1")[]
 
-    #colbreak()
+//     #colbreak()
 
-    #pop.column-box(heading: "Col2")[]
+//     #pop.column-box(heading: "Col2")[]
 
-    #colbreak()
+//     #colbreak()
 
-    #pop.column-box(heading: "Col3", stretch-to-next: true)[
-        This will be very very large!
-    ]
-])
+//     #pop.column-box(heading: "Col3", stretch-to-next: true)[
+//         This will be very very large!
+//     ]
+// ])
 
-#pop.bottom-box()[
-    Peace of posters:
-    https://jonaspleyer.github.io/peace-of-posters/
-]
+// #pop.bottom-box()[
+//     Peace of posters:
+//     https://jonaspleyer.github.io/peace-of-posters/
+// ]
 
