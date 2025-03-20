@@ -79,7 +79,7 @@
         $
            J(phi) = sum_(i,j) phi(|i angle.r angle.l j|) times.circle |i angle.r angle.l j|
         $
-
+        // $quad phi(rho) = "Tr"_X (J(phi) (I_Y times.circle rho^T))$
         Definition representation: $phi(rho) = "Tr"_E(U rho U^dagger) $
 
         Vectorization: $K(phi)"vec"(rho) = "vec"(phi(rho))$
