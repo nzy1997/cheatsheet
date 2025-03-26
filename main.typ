@@ -22,12 +22,12 @@
     #pop.column-box(heading: "Codes")[
 #figure(canvas({
   import draw: *
-  steane_code((0, 0),size: 8)
+  steane_code((0, 0),size: 8,color1: rgb("#cb3d339c"), color2: rgb("#9558b2c1"), color3: rgb("#37982690"))
   }))
   #figure(canvas({
   import draw: *
-  surface_code((0, 0), 3, 3, size :6,number_tag: true)
-  surface_code_label((20,7),size: 2)
+  surface_code((0, 0), 3, 3, size :6,color2: rgb("#45c9fdb1"),color1: rgb("#fff12886"),number_tag: true)
+  surface_code_label((20,7),size: 2,color2: rgb("#45c9fdb1"),color1: rgb("#fff12886"))
    for i in range(3){
     circle((12, i*6), radius: 0.4, fill: red, stroke: none, name: "control" + str(i))
    }
@@ -61,8 +61,8 @@
         $
     ]
 
-    // #pop.column-box(heading: "Another one")[
-    //     We are peaceful doves.
+    // #pop.column-box(heading: "Multipl")[
+
     // ]
 
     #colbreak()
@@ -80,7 +80,7 @@
            J(phi) = sum_(i,j) phi(|i angle.r angle.l j|) times.circle |i angle.r angle.l j|
         $
         // $quad phi(rho) = "Tr"_X (J(phi) (I_Y times.circle rho^T))$
-        Definition representation: $phi(rho) = "Tr"_E(U rho U^dagger) $
+        Definition representation: $phi(rho) = "Tr"_E (U rho U^dagger) $
 
         Vectorization: $K(phi)"vec"(rho) = "vec"(phi(rho))$
 
@@ -106,4 +106,3 @@
 //     Peace of posters:
 //     https://jonaspleyer.github.io/peace-of-posters/
 // ]
-
